@@ -1,4 +1,9 @@
-.MBackground{
-    background-image: url("/Images/BG.png");
-    background-color: #cccccc;
+.diagonal-box {
+	background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+	transform: skewY(-5deg);
+}
+
+.content {
+	margin: 0 auto;
+	transform: skewY(5deg);
 }
