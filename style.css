@@ -1,9 +1,36 @@
 .diagonal-box {
-	background-image: linear-gradient(45deg, #654ea3, #eaafc8);
-	transform: skewY(-5deg);
+	background-color: #8b00ff;
+    height: 100vh;
 }
 
 .content {
+	margin: 0 auto;
+}
+
+.diagonal-box1 {
+	background-color: #5800a1;
+	transform: skewY(10deg);
+    height: 50vh;
+    margin-top: -30vh;
+
+}
+
+.diagonal-box2 {
+	background-color: #320077;
+	transform: skewY(-12deg);
+    height: 50vh;
+    margin-top: -30vh;
+}
+
+
+.diagonal-box3 {
+	background-color: #333333;
+	transform: skewY(3deg);
+    height: 70vh;
+    margin-top: -35vh;
+}
+
+.content3 {
 	margin: 0 auto;
 	transform: skewY(5deg);
 }
