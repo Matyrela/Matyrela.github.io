@@ -3,10 +3,6 @@
     height: 100vh;
 }
 
-.content {
-	margin: 0 auto;
-}
-
 .diagonal-box1 {
 	background-color: #5800a1;
 	transform: skewY(10deg);
@@ -26,7 +22,7 @@
 .diagonal-box3 {
 	background-color: #333333;
 	transform: skewY(3deg);
-    height: 70vh;
+    height: 60vh;
     margin-top: -35vh;
 }
 
@@ -34,3 +30,29 @@
 	margin: 0 auto;
 	transform: skewY(5deg);
 }
+
+.post-container {
+    margin-top: 12vh;
+    overflow: auto;
+    height: 25vh;
+}
+.post-thumb {
+    float: left;
+    margin-left: 25%;
+}
+.post-thumb img {
+    margin-top: 2vh;
+    -webkit-box-shadow: 5px 5px 15px 6px #000000; 
+    box-shadow: 5px 5px 15px 6px #000000;
+    border-radius: 100%;
+    display: block
+}
+.post-content {
+    color: #000000;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 10vh;
+    float: right;
+    margin-right: 25%;
+}
+
+
