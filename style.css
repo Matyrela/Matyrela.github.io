@@ -46,7 +46,6 @@
     
     .post-container {
         margin-top: 12vmin;
-        overflow: auto;
         height: 40vh;
     }
     .post-thumb {
@@ -141,12 +140,11 @@
     
     .post-container {
         margin-top: 12vmin;
-        overflow: auto;
         height: 25vmin;
     }
     .post-thumb {
         float: left;
-        margin-left: 25%;
+        margin-left: 15%;
     }
     .post-thumb img {
         margin-top: 2vmin;
@@ -161,7 +159,7 @@
         font-family: 'Outfit', sans-serif;
         margin-top: 10vmin;
         float: right;
-        margin-right: 25%;
+        margin-right: 15%;
     }
     
     .arrow {
@@ -232,5 +230,13 @@
     color: white;
   }
 
-
+h1{
+    font-family: 'Open Sans', sans-serif
+}
+h2{
+    font-family: 'Open Sans', sans-serif
+}
+h3{
+    font-family: 'Open Sans', sans-serif
+}
 
