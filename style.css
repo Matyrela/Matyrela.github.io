@@ -6,7 +6,9 @@
         display: none;
     }
 
-    .carousel{
+    .carousel
+    {
+        display: block;
     }
 
     .diagonal-box {
