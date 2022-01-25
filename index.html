@@ -8,13 +8,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="style.css" rel="stylesheet">
-        <title>Hello, world!</title>
+        <title>Matías Varela</title>
     </head>
     <!--- Fondo y barra de navegacion --->
     <body style="background-color: #333333;">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <div class="diagonal-box">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>        <div class="diagonal-box">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="transform: skewY(0deg);">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">Matías Varela</a>
@@ -24,7 +27,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            <a class="nav-link" style="cursor: pointer;" onClick="document.getElementById('Portfolio').scrollIntoView();">Portfolio</a>
+                            <a class="nav-link" style="cursor: pointer;" onClick="document.getElementById('Portfolio').scrollIntoView();">Trabajos</a>
                             <a class="nav-link" style="cursor: pointer;" onClick="document.getElementById('About').scrollIntoView();">About</a>
                         </div>
                     </div>
@@ -34,11 +37,11 @@
                 <div class="post-thumb"><img src="Images/Me.jfif" style="height: 20vmin;width: 20vmin;"/></div>
                 <div class="post-content pc">
                     <h1 style="font-size: 5vmin;">Matías Varela.&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                    <h2 style="font-size: 3vmin;font-family: 'Montserrat', sans-serif;">Desarrollador.</h2>
+                    <h2 style="font-size: 3vmin;font-family: 'Montserrat', sans-serif;">Desarrollador jr.</h2>
                 </div>
                 <div class="post-content mobile">
                     <h1 style="font-size: 5vmin;">Matías Varela.&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                    <h2 style="font-size: 3vmin;font-family: 'Montserrat', sans-serif;">Desarrollador.</h2>
+                    <h2 style="font-size: 3vmin;font-family: 'Montserrat', sans-serif;">Desarrollador jr.</h2>
                 </div>
             </div>
         </div>
@@ -50,23 +53,90 @@
         </div>
         <div class="diagonal-box3">
             <br><br><br><br>
-            <div style="transform: skewY(-3deg); height: 90vh;" id="Portfolio">
+            <div style="transform: skewY(-3deg);" id="Portfolio">
                 
-                <h1 style="color: white;" class="titles">Portfolio</h1>
+                <h1 style="color: white;" class="titles">Trabajos</h1>
                 <hr style="color: white; height: 0.5vmin;width: 90vw; margin-left: 5%;">
+                    <div style="margin-left: 6%; margin-right: 6%;color: white;">
+                        <h1>Unity:</h1><br>
+                        <a href="https://play.google.com/store/apps/details?id=com.Rocayo.Tuki"><h2>Tuki's paper plane</h2></a>
+
+                        <div style="height: 60vh; width: 60vw; margin-left: 15vw;" id="carouselTuki" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" style="-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                            box-shadow: 5px 5px 15px 5px #000000;">
+                              <div class="carousel-item active">
+                                <img class="d-block w-100" src="Images/1.webp" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="Images/2.webp" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="Images/3.webp" alt="Third slide">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselTuki" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselTuki" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+                          <br><br><br><br><br>
+        
+                        <h1>Desarollo web</h1><br>
+                        <a href="https://github.com/Matyrela/ELEF-SM"><h2>Delivery system (PHP MySQL)</h2></a>
+                        <div style="height: 60vh; width: 60vw; margin-left: 15vw;-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+                        box-shadow: 5px 5px 15px 5px #000000;" id="carouselEL" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img class="d-block w-100" src="Images/E4.png">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="Images/E3.png">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="Images/E2.png">
+                              </div>
+                              <div class="carousel-item">
+                                <img class="d-block w-100" src="Images/E1.png">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselEL" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselEL" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div><br><br><br><br><br>
+                        <h2>Task Manager (PHP MySQL) (WIP)</h2>
+                    </div>
+               
+                
+                
             
             </div>
             <br><br><br><br>
-            <div style="transform: skewY(-3deg); height: 90vh;" id="About">
+            <div style="transform: skewY(-3deg);" id="About">
                 
                 <h1 style="color: white;" class="titles">About</h1>
                 <hr style="color: white; height: 0.5vmin;width: 90vw; margin-left: 5%;">
-            
+                <div style="text-align: center; color: rgb(214, 214, 214);">
+                    <h3 style="margin-left: 10%; width: 80%; text-align: justify; font-size: 4.5vmin;">Me llamo Matías, me considero apasionado por la tecnologías lo cual me llevó a adquirir muchos conocimientos de manera autodidacta. aprendí a hacer sitios webs en HTML con CSS y JavaScript como también en PHP con MySQL. <br>
+                        Otra de las cosas que aprendí de forma autodidacta es a usar el motor Unity programando en C#. <br>
+                        En este momento me estoy capacitando en Dart y Flutter por mi cuenta.<br><br>
+                        
+                        Mi interés es poder incorporarme a una organización que me nutra de conocimientos y poder desarrollar lo que aprendí hasta ahora.
+                    </h3> <br>
+                    <h4 class="" style="color: white; font-size: 3.5vmin;">Matías Varela - mativaresc@gmail.com</h4>
+                    <a href="https://www.linkedin.com/in/mat%C3%ADas-varela-641550223/" class="fa fa-linkedin"></a>
+                    <a href="mailto:mativaresc@gmail.com" class="fa fa-envelope"></a>    
+                    <a href="https://github.com/Matyrela" class="fa fa-github"></a>    
+                </div>  
             </div>
         </div>        
-        <!--- Contenido --->
-
-        
-
     </body>
 </html>
