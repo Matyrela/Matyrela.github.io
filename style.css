@@ -49,7 +49,7 @@
         margin-left: 40%;
     }
     .post-thumb img {
-        margin-top: 2vmin;
+        margin-top: 2vw;
         -webkit-box-shadow: 0.5vmin 0.5vmin 1.5vmin 0.6vmin #000000; 
         box-shadow: 0.5vmin 0.5vmin 1.5vmin 0.6vmin #000000;
         border-radius: 100%;
