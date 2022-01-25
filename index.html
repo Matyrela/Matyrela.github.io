@@ -24,8 +24,8 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            <a class="nav-link" href="#">Portfolio</a>
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" style="cursor: pointer;" onClick="document.getElementById('Portfolio').scrollIntoView();">Portfolio</a>
+                            <a class="nav-link" style="cursor: pointer;" onClick="document.getElementById('About').scrollIntoView();">About</a>
                         </div>
                     </div>
                 </div>
@@ -40,9 +40,13 @@
         </div>
         <div class="diagonal-box1"></div>
         <div class="diagonal-box2">
-            <div class="arrow"></div>
+            <div class="content2">
+                <a style="cursor: pointer;" onClick="document.getElementById('Portfolio').scrollIntoView();" class="arrow"></a>
+            </div>
         </div>
         <div class="diagonal-box3"></div>
+
+        <div id="Portfolio" style="margin-top: 500vh;">A</div>
         
         <!--- Contenido --->
     </body>

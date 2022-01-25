@@ -26,9 +26,9 @@
     margin-top: -35vh;
 }
 
-.content3 {
+.content2 {
 	margin: 0 auto;
-	transform: skewY(5deg);
+	transform: skewY(12deg);
 }
 
 .post-container {
@@ -55,4 +55,30 @@
     margin-right: 25%;
 }
 
-
+.arrow {
+    margin-top: 4vh;
+	position: absolute;
+    margin-left: 50%;
+	width: 6vmin;
+	height: 6vmin;
+    border-top: 1vmin solid white;
+	border-right: 1vmin solid white;
+	background: transparent;
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+    transform: translate3d(0,-50%,0) rotate(135deg);
+}
+	.arrow:hover {
+		border-color: orange;
+		box-shadow: 0.5vmin -0.5vmin 0 white;
+	}
+	
+	.arrow:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-40%,-60%) rotate(45deg);
+		width: 200%;
+		height: 200%;
+	}
