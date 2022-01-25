@@ -50,7 +50,7 @@
     }
     .post-thumb {
         float: left;
-        margin-left: 40%;
+        margin-left: 35%;
     }
     .post-thumb img {
         margin-top: 2vw;
@@ -65,7 +65,7 @@
         font-family: 'Outfit', sans-serif;
         margin-top: 5vh;
         float: left;
-        margin-left: 35%;
+        margin-left: 30%;
     }
     
     .arrow {
