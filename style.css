@@ -6,6 +6,9 @@
         display: none;
     }
 
+    .carousel{
+    }
+
     .diagonal-box {
         background-color: #cae5ff;
         height: 100vh;
@@ -185,6 +188,10 @@
             transform: translate(-40%,-60%) rotate(45deg);
             width: 200%;
             height: 200%;
+        }
+
+        .carousel{
+            height: 60vh; width: 60vw; margin-left: 15vw;
         }
 }
 
