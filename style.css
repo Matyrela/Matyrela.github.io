@@ -125,7 +125,7 @@
     .diagonal-box3 {
         background-color: #333333;
         transform: skewY(3deg);
-        height: 60vmin;
+        height: 61vmin;
         margin-top: -35vmin;
     }
     
@@ -186,6 +186,11 @@
             width: 200%;
             height: 200%;
         }
+}
+
+.titles{
+    font-size: 10vmin;
+    text-align: center;
 }
 
 
