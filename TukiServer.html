@@ -1,7 +1,7 @@
 <h1>Evento:</h1>
-<p>0</p>
+<p>!0!</p>
 <h1>Frase:</h1>
-<p id = "Ran" > </p>
+<p id = "Ran" ></p>
  
 <script>
     var down = document.getElementById('Ran');
@@ -15,7 +15,7 @@
      
     window.onload = function() {
         down.innerHTML =
-            arr[Math.floor(Math.random() * arr.length)];
+            "!" + arr[Math.floor(Math.random() * arr.length)] + "!";
     };
 
 </script>
