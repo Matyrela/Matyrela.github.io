@@ -31,7 +31,7 @@
 </head>
 <body style="background-color: #333333;">
     <div>
-        <textarea id="enzo" name="code" id="code" style="height: 300px; width: 100%;" onkeyup="load()"></textarea>
+        <textarea id="enzo" name="code" id="code" style="height: 280px; width: 100%;" onkeyup="load()"></textarea>
     </div>
 
     <div style="float: left;position: absolute;">
@@ -252,9 +252,6 @@
                 if(count >= 32){
                     var br = document.createElement('br');
                     s.appendChild(br);
-                    //var br = document.createElement('br');
-                    //s.appendChild(br);
-
                     count = 0;
                 }
             }
@@ -263,7 +260,199 @@
         load();
     </script>
 
-        
+    <script>
+        function rgb2hsv (r, g, b) {
+            let rabs, gabs, babs, rr, gg, bb, h, s, v, diff, diffc, percentRoundFn;
+            rabs = r / 255;
+            gabs = g / 255;
+            babs = b / 255;
+            v = Math.max(rabs, gabs, babs),
+            diff = v - Math.min(rabs, gabs, babs);
+            diffc = c => (v - c) / 6 / diff + 1 / 2;
+            percentRoundFn = num => Math.round(num * 100) / 100;
+            if (diff == 0) {
+                h = s = 0;
+            } else {
+                s = diff / v;
+                rr = diffc(rabs);
+                gg = diffc(gabs);
+                bb = diffc(babs);
+
+                if (rabs === v) {
+                    h = bb - gg;
+                } else if (gabs === v) {
+                    h = (1 / 3) + rr - bb;
+                } else if (babs === v) {
+                    h = (2 / 3) + gg - rr;
+                }
+                if (h < 0) {
+                    h += 1;
+                }else if (h > 1) {
+                    h -= 1;
+                }
+            }
+            return {
+                h: Math.round(h * 360),
+                s: percentRoundFn(s * 100),
+                v: percentRoundFn(v * 100)
+            };
+        }
+
+        function generatedb(n){
+                var output = ".db ";
+                var count = 0
+                for( i=0; i < n.length; i++ )
+                {
+                    count = count + 1;
+                    output = output + n[i] + ", ";
+
+
+
+                    if(count >= 32){
+                        output = output.slice(0, -2)
+                        output = output + "\n.db ";
+                        count = 0;
+                    }
+                }
+                output = output.slice(0, -7);
+                enzo.value = output;
+                load()
+            }
+
+        function resize(){
+        //define the width to resize e.g 600px
+        var resize_width = 32;//without px
+
+        //get the image selected
+        var item = document.querySelector('#uploader').files[0];
+
+        //create a FileReader
+        var reader = new FileReader();
+        reader.readAsDataURL(item);
+        reader.name = item.name;//get the image's name
+        reader.size = item.size; //get the image's size
+        reader.onload = function(event) {
+            var img = new Image();//create a image
+            img.src = event.target.result;//result is base64-encoded Data URI
+            img.name = event.target.name;//set name (optional)
+            img.size = event.target.size;//set size (optional)
+            img.onload = function(el) {
+            var elem = document.createElement('canvas');//create a canvas
+
+            //scale the image to 600 (width) and keep aspect ratio
+            var scaleFactor = resize_width / el.target.width;
+            elem.width = resize_width;
+            elem.height = resize_width;
+
+            //draw in canvas
+            var ctx = elem.getContext('2d');
+            ctx.drawImage(el.target, 0, 0, elem.width, elem.height);
+            var imgData = ctx.getImageData(0, 0, resize_width, resize_width).data;
+
+            //get the base64-encoded Data URI from the resize image
+            var srcEncoded = ctx.canvas.toDataURL('image/png', 1);
+            document.querySelector('#image').src = srcEncoded;
+
+            var i = 0;
+            var rgb = "";
+            imgData.forEach(element => {
+                i++;
+                if(i == 4){
+
+                }
+                else if(i == 3){
+                    rgb = rgb + element;
+                }
+                else{
+                    rgb = rgb + element + ",";
+                }
+                
+                if(i >= 4){
+                    i = 0;
+                    rgb = rgb + ";";
+                }
+            });
+
+            var arr = rgb.split(";");
+            i = 0;
+            arr.length = 1024;
+
+            var microchip = "";
+
+            arr.forEach(element => {
+                i++;
+
+                //console.log(i + ": " + element);
+                var arr2 = element.split(",");
+                x = rgb2hsv(arr2[0],arr2[1],arr2[2]);
+
+                //CRITERIOS PARA CREAR COLORES
+
+                if(x.v <= 30){
+                    microchip = microchip + "0x00, ";
+                }
+
+                else if(x.s <= 30){
+                    microchip = microchip + "0x07, ";
+                }
+
+                else if(x.h >= 0 && x.h <= 25){
+                    microchip = microchip + "0x02, ";
+                }
+                
+                else if(x.h >= 26 && x.h <= 84){
+                    microchip = microchip + "0x03, ";
+                }
+                
+                else if(x.h >= 85 && x.h <= 145){
+                    microchip = microchip + "0x01, ";
+                }
+                
+                else if(x.h >= 146 && x.h <= 210){
+                    microchip = microchip + "0x05, ";
+                }
+                
+                else if(x.h >= 211 && x.h <= 247){
+                    microchip = microchip + "0x04, ";
+                }
+                
+                else if(x.h >= 248 && x.h <= 326){
+                    microchip = microchip + "0x06, ";
+                }
+                
+                else if(x.h >= 327 && x.h <= 360){
+                    microchip = microchip + "0x02, ";
+                }
+
+                else{
+                    microchip = microchip + "0x00, ";
+                }
+
+            });
+
+            var arrMicro = microchip.split(", ");
+
+
+            generatedb(arrMicro);
+
+            }
+        }
+    }
+    </script>
+
+    <div style="margin-left: 40%;">
+        <input type="file" id="uploader" value="a">
+        <img id="image">
+        <br>
+    </div>
+    <div style="margin-left: 46%;">
+        <button onclick='resize()'>¡Convertir!</button>
+    </div>
+    
+    
+
+    
+
 
         
        
