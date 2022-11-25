@@ -13,8 +13,9 @@
             overflow-x:hidden;
         }
         .pixel{
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid black;
         }
         .pixel2{
             width: 40px;
@@ -49,14 +50,16 @@
         <button class="line pixel btn" style="background-color: purple;" onclick="changeCurrentColor('0x06')"></button>
         <button class="line pixel btn" style="background-color: white;" onclick="changeCurrentColor('0x07')"></button>
     </div>
-   
-    <div id="display" style="margin-left: 33%;">
+
+    <div id="display" style="padding: 5px; margin-left: 32vw;background-color: goldenrod; width: 576px;" onmouseleave="mouseDown = false;">
 
     </div>
 
     <script>
         var COLORACTUAL = "0x07";
         var myArray = null;
+
+        var mouseDown = false;
 
         var divColor = document.getElementById("divcoloractual");
         var pColor = document.getElementById("pcoloractual");
@@ -168,6 +171,14 @@
             }
 
         function cambiarColor(n){
+            if (mouseDown){
+                myArray[n] = COLORACTUAL;
+            }
+            
+            save()
+        }
+
+        function forceColorChange(n){
             myArray[n] = COLORACTUAL;
             save()
         }
@@ -193,56 +204,60 @@
             {
                 count = count + 1;
 
-                var div = document.createElement('button');
+                var div = document.createElement('div');
                 div.setAttribute('class', 'line pixel');
                 var funtioni = "cambiarColor(" + i + ");";
-                div.setAttribute("onclick", funtioni)
+                var funtioni2 = "forceColorChange(" + i + ");";
+
+                div.onmousedown = function () {
+                    mouseDown = true;
+                }
+                div.onmouseup = function () {
+                    mouseDown = false;
+                }
+                div.onclick = function () {
+                    mouseDown = true;
+                }
+
+                div.setAttribute("onclick", funtioni2);
+                div.setAttribute("onmousemove", funtioni);
 
                 switch(myArray[i]){
 
                     case "0x00":
                         div.setAttribute('style', 'background-color: #111111;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x01":
                         div.setAttribute('style', 'background-color: green;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x02":
                         div.setAttribute('style', 'background-color: red;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x03":
                         div.setAttribute('style', 'background-color: yellow;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x04":
                         div.setAttribute('style', 'background-color: blue;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x05":
                         div.setAttribute('style', 'background-color: cyan;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x06":
                         div.setAttribute('style', 'background-color: purple;');
-                        div.setAttribute("hex", myArray[i])
                         break;
 
                     case "0x07":
                         div.setAttribute('style', 'background-color: white;');
-                        div.setAttribute("hex", myArray[i])
                         break;
                         
                     default:
                         div.setAttribute('style', 'background-color: SaddleBrown;');
-                        div.setAttribute("hex", myArray[i])
                         break;
                 }
                 
